@@ -80,13 +80,15 @@ if ( ! function_exists( 'desarrollos_setup' ) ) :
 			'flex-height' => true,
 		) );
 
-		add_action( 'after_setup_theme', 'woocommerce_support' );
-			function woocommerce_support() {
-		    add_theme_support( 'woocommerce' );
-		}
+	
 	}
 endif;
 add_action( 'after_setup_theme', 'desarrollos_setup' );
+
+add_action( 'after_setup_theme', 'woocommerce_support' );
+	function woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+}
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -125,6 +127,8 @@ function desarrollos_scripts() {
 	wp_enqueue_style( 'desarrollos-style', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css' );
+
+	wp_enqueue_style( 'googlefonts', 'https://fonts.googleapis.com/css?family=Lora:400i|Open+Sans:300,400,700,800');
 
 	wp_enqueue_script( 'jquery' );
 
