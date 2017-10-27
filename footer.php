@@ -17,6 +17,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis voluptate quisquam, blanditiis dolor facilis, saepe? Autem suscipit debitis, non id dignissimos nostrum ad labore, repudiandae, eveniet vel vero natus deleniti?
 					<div class="site-info">
 						<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'desarrollos' ) ); ?>"><?php
 							/* translators: %s: CMS name, i.e. WordPress. */
