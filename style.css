@@ -921,3 +921,28 @@ object {
 footer{
 	background-color: #000;
 }
+
+
+.post-entry {
+    padding: 20px;
+    text-align: center;
+    height: 350px;
+}
+
+.post-scuare {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 21% 0;
+        height: 100%;
+}
+.post-scuare h2 {
+    color: #eaeaea;
+        margin: 6px;
+}
+.post-scuare p{
+	color:#CAA88C;
+	margin-bottom: 0px;
+
+}
+.post-scuare .post-categories a {
+    color: #CAA88C;
+}

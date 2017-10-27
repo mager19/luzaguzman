@@ -92,8 +92,19 @@ get_header();
 				if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				<!-- post -->
 				<div class="col-md-6">
-					<?php the_title(); ?>
-					<?php the_post_thumbnail(); ?>
+					<div class="post-entry" style="background: url(<?php the_post_thumbnail_url(); ?>);">
+						<div class="post-scuare">
+							<p><?php the_date(); ?></p>
+							<h2><?php the_title(); ?></h2>
+							<p><b><?php
+								$category = get_the_category();
+								echo $category[0]->cat_name;
+								?>
+									
+							</b></p>
+
+						</div>
+					</div>
 				</div>
 				<?php endwhile; ?>
 				<!-- post navigation -->
