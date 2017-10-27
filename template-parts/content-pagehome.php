@@ -60,7 +60,7 @@ get_header();
 			</div>
 			<div class="col-md-4">
 				<div class="information--right">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam obcaecati ipsum veniam eius eligendi, saepe, vitae magnam doloribus qui sequi dicta labore cum! Enim placeat eos mollitia facilis, nam quasi.
+					<?php get_template_part( 'template-parts/category', 'list' ); ?>
 				</div>
 			</div>
 		</div>
