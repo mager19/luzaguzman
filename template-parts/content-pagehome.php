@@ -29,7 +29,33 @@ get_header();
 		<div class="row">
 			<div class="col-md-8">
 				<div class="information--left">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti laboriosam aperiam maiores enim maxime reprehenderit nihil, ab vel. Quod voluptate et natus pariatur quis repellendus molestiae iste quia culpa ducimus.
+					<div class="row">
+						<?php 
+						$args = array( 'pagename' => 'AboutMe', 'posts_per_page' => '1' );
+						$loop = new WP_Query( $args );
+
+						if ($loop->have_posts() ) : while ($loop->have_posts() ) :$loop->the_post(); ?>
+						<!-- post -->
+						<div class="col-md-7">
+							<div class="information--left__info">
+								<h4>About Me</h4>
+								<h3>Hi Everyone my name is Luz! </h3>
+								<p><?php the_excerpt(); ?></p>
+								<a href="#" class="boton boton--verde">Read More</a>
+								</div>
+						</div>
+						<div class="col-md-5">
+							<div class="information--left__imagen" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
+							</div>							
+						</div>
+						<?php endwhile; ?>
+						<!-- post navigation -->
+						<?php else: ?>
+						<!-- no posts found -->
+						<?php endif; ?>
+						<?php wp_reset_postdata(); ?>
+						
+					</div>
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -66,8 +92,19 @@ get_header();
 				if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				<!-- post -->
 				<div class="col-md-6">
-					<?php the_title(); ?>
-					<?php the_post_thumbnail(); ?>
+					<div class="post-entry" style="background: url(<?php the_post_thumbnail_url(); ?>);">
+						<div class="post-scuare">
+							<p><?php the_date(); ?></p>
+							<h2><?php the_title(); ?></h2>
+							<p><b><?php
+								$category = get_the_category();
+								echo $category[0]->cat_name;
+								?>
+									
+							</b></p>
+
+						</div>
+					</div>
 				</div>
 				<?php endwhile; ?>
 				<!-- post navigation -->
