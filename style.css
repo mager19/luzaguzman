@@ -863,13 +863,33 @@ object {
 /*******Botones******/
 .boton{
 	border-radius: 5px;
+	color:#fff;
 	font-size: 1.1em;
 	padding: 0.5em 1.5em;
 }
 
-.boton--verde{
+.boton--verde, .boton--verde:visited{
 	background-color: #9BA78A;
 	color:#fff;
+}
+
+.boton--verde:hover{
+	background-color: transparent;
+	border:2px solid #9BA78A;
+	color:#9BA78A;
+	text-decoration: none;
+}
+
+.boton--cafe, .boton--cafe:visited {
+	background-color: #CCA78E;
+	border:2px solid #CCA78E;
+	color:#fff;
+}
+
+.boton--cafe:hover{
+	background-color: transparent;
+	color:#CCA78E;
+	text-decoration: none;
 }
 
 .slide-principal{
@@ -964,8 +984,30 @@ object {
 
 .pro_home ul li a h2.woocommerce-loop-product__title{
 	color:#4f4f4f;
-	font-size: 2.5em!important;
+	font-size: 2.3em!important;
+	font-weight: 700;
+	letter-spacing: 1px;
 	margin-top: -0.8em!important;
+}
+
+.woocommerce ul.products li.product .price {
+	margin-top: -10px;
+	margin-bottom: 2em;
+}
+
+.pro_home .woocommerce-LoopProduct-link.woocommerce-loop-product__link > span > span{
+	color:#9BA78A;
+	font-size: 2em;
+	font-weight: 800;
+	letter-spacing: 2px;
+}
+
+.pro_home .button.product_type_simple.add_to_cart_button.ajax_add_to_cart{
+	background-color: #CCA78E;
+	border-radius: 5px;
+	color:#fff;
+	font-size: 1.1em;
+	padding: 1em 1.5em;
 }
 
 .blog{
