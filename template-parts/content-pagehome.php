@@ -17,12 +17,12 @@ get_header();
 	<div class="container">
 		<div class="row">
 			<div class="slide">
-				<div class="col-sm-1"><span class="slider-arrows">&#12296;</span></div>
+				<div class="col-sm-1"><span class="glyphicon glyphicon-menu-left slider-arrows" aria-hidden="true"></span></div>
 				<div class="col-sm-10 slide-content">
 				<h2>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolore laborum, corporis impedit sapiente. </h2>
 				</div>
-				<div class="col-sm-1"><span class="slider-arrows">&#12297;</span></div>
+				<div class="col-sm-1"><span class="glyphicon glyphicon-menu-right slider-arrows" aria-hidden="true"></span></div>
 			</div>
 		</div>
 	</div>
