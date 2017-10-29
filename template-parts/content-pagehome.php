@@ -72,7 +72,7 @@ get_header();
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<?php echo do_shortcode( '[featured_products limit="6" columns="3" ]' ); ?>
+				<?php echo do_shortcode( '[featured_products limit="6" columns="3" class="pro_home" ]' ); ?>
 			</div>
 		</div>
 	</div>

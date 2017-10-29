@@ -171,3 +171,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );	    
+ 
+/*Categoria de producto en el home*/
+add_action( 'woocommerce_before_shop_loop_item_title', 'luzaguzman_cat_pro_home', 10 ); 
+function luzaguzman_cat_pro_home(){
+	$product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
+	$single_cat = array_shift( $product_cats ); 
+	echo( '<h4>' . $single_cat->name . '</h4>' );
+	
+}
