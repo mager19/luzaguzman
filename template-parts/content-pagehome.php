@@ -16,8 +16,13 @@ get_header();
 <section class="slide-principal">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolore laborum, corporis impedit sapiente. Necessitatibus magnam molestiae, est nisi provident expedita laboriosam adipisci ullam, fugit, dignissimos sit ipsum at fugiat!
+			<div class="slide">
+				<div class="col-sm-1"><span class="glyphicon glyphicon-menu-left slider-arrows" aria-hidden="true"></span></div>
+				<div class="col-sm-10 slide-content">
+				<h2>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolore laborum, corporis impedit sapiente. </h2>
+				</div>
+				<div class="col-sm-1"><span class="glyphicon glyphicon-menu-right slider-arrows" aria-hidden="true"></span></div>
 			</div>
 		</div>
 	</div>
