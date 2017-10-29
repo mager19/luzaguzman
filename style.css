@@ -875,6 +875,7 @@ object {
 .slide-principal{
 	background-color: blue;
 	height: 60vh;
+	color: #fff;
 }
 
 .information--left{
@@ -946,3 +947,42 @@ footer{
 .post-scuare .post-categories a {
     color: #CAA88C;
 }
+
+
+/************* header *******************/
+header.header {
+    padding: 10px 0px;
+}
+div#primary-menu a {
+    font-size: 1.7em;
+    color: #000;
+}
+
+nav#site-navigation {
+    width: auto;
+    padding-top: 3%;
+}
+div#primary-menu li {
+    padding-left: 17px;
+    padding-right: 17px;
+}
+.slider-arrows{
+	font-size: 3em;
+    font-weight: bold;
+}
+.slide {
+    display: flex;
+    align-items: center;
+    height: 59vh;
+}
+.col-sm-10.slide-content {
+    align-self: flex-end;
+        padding: 0px 25px 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    margin: 0px 20px;
+    border: 2px solid;
+    border-radius: 3px;
+    box-shadow: 0px 0px 21px -2px #000;
+}
+/************* fin header **************/
