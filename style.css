@@ -892,11 +892,33 @@ object {
 	text-decoration: none;
 }
 
-.slide-principal{
-	background-color: blue;
-	height: 60vh;
-	color: #fff;
+.slide__item{
+	background-size: cover;
+	background-position: center center;
+	display: flex!important;
+	justify-content: center;
+	align-items: flex-end;
+	height: 60vh!important;
 }
+
+.slide-principal h1{
+	background-color: rgba(255,255,255,0.3);
+	border-left:2px solid #fff;
+	border-right:2px solid #fff;
+	border-top:2px solid #fff;
+	border-radius: 3px;
+	color:#fff;
+	letter-spacing: 2px;
+	font-weight: 700;
+	margin-bottom: 0;
+	padding: 0.5em 0;
+	text-align: center;
+	text-transform: uppercase;
+	width: 50%;
+}
+
+
+/********Information**********/
 
 .information--left{
 	background-color: #EEE8E2;
@@ -927,7 +949,6 @@ object {
 	background-size: cover;
 	background-position: center center;
 	min-height: 435px;
-	
 }
 
 .information--right{
@@ -1062,7 +1083,7 @@ footer{
 header.header {
     padding: 10px 0px;
 }
-div#primary-menu a {
+#primary-menu a {
     font-size: 1.7em;
     color: #000;
 }
@@ -1071,7 +1092,7 @@ nav#site-navigation {
     width: auto;
     padding-top: 3%;
 }
-div#primary-menu li {
+#primary-menu li {
     padding-left: 17px;
     padding-right: 17px;
 }
@@ -1110,8 +1131,8 @@ i.twitter{
 	background: url(img/twitter-logo.svg) no-repeat top left;
   background-size: contain;
 }
-i.dribble{
-	background: url(img/dribble-logo.svg) no-repeat top left;
+i.pinterest{
+	background: url(img/pinterest-logo.svg) no-repeat top left;
   background-size: contain;
 }
 i.instagram{
