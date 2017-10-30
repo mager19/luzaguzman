@@ -133,6 +133,10 @@ function desarrollos_scripts() {
 
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css' );
 
+	wp_enqueue_style( 'slickcss', get_template_directory_uri(). '/css/slick.css' );
+
+	wp_enqueue_style( 'slicktema', get_template_directory_uri(). '/css/slick-theme.css' );
+
 	wp_enqueue_style( 'googlefonts', 'https://fonts.googleapis.com/css?family=Lora:400i|Open+Sans:300,400,700,800');
 
 	wp_enqueue_script( 'jquery' );
@@ -140,6 +144,12 @@ function desarrollos_scripts() {
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array(), false, 'all' );
 
 	wp_enqueue_script( 'desarrollos-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'jqueryf', get_template_directory_uri() . '/js/jquery-3.2.1.min.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/js/slick.min.js', array(), false, 'all' );	
+
+	wp_enqueue_script( 'funciones', get_template_directory_uri() . '/js/funciones.js', array(), false, 'all' );	
 
 	wp_enqueue_script( 'desarrollos-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
