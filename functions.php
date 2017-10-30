@@ -176,3 +176,25 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );	
+
+/*Categoria de producto en el home*/
+add_action( 'woocommerce_before_shop_loop_item_title', 'luzaguzman_cat_pro_home', 10 ); 
+function luzaguzman_cat_pro_home(){
+	$product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
+	$single_cat = array_shift( $product_cats ); 
+	echo( '<h4>' . $single_cat->name . '</h4>' );	
+}
+
+/*Quito el precio sale y el sticker sale*/
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_product_get_sale_price', 10 );
+
+/*Quito el boton add to cart en el home*/
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+
+/*Se añade boton readmore*/
+add_action( 'woocommerce_after_shop_loop_item', 'luzaguzman_boton_readmore', 10);
+function luzaguzman_boton_readmore(){
+	echo('<a href="'. get_the_permalink() . '" class="boton boton--cafe">Read More</a>');
+}
