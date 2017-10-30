@@ -892,11 +892,19 @@ object {
 	text-decoration: none;
 }
 
-.slide-principal{
-	background-color: blue;
-	height: 60vh;
-	color: #fff;
+.slide__item{
+	background-size: cover;
+	background-position: center center;
+	display: flex!important;
+	justify-content: center;
+	align-items: flex-end;
+	height: 60vh!important;
 }
+
+
+
+
+/********Information**********/
 
 .information--left{
 	background-color: #EEE8E2;
@@ -927,7 +935,6 @@ object {
 	background-size: cover;
 	background-position: center center;
 	min-height: 435px;
-	
 }
 
 .information--right{
