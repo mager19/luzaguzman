@@ -1182,6 +1182,7 @@ button.menu-toggle {
 @media screen and (max-width: 62em){
 ul.nav-menu li {
     display: inline-table;
-    FLOAT: none;
+    float: none;
+    width: 80%;
 }
 }
