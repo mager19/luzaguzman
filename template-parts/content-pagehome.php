@@ -46,7 +46,7 @@ get_header();
 								<h4>About Me</h4>
 								<h3>Hi Everyone my name is Luz! </h3>
 								<p><?php the_excerpt(); ?></p>
-								<a href="#" class="boton boton--verde">Read More</a>
+								<a href="<?php the_permalink(); ?>" class="boton boton--verde">Read More</a>
 								</div>
 						</div>
 						<div class="col-md-5">
@@ -65,7 +65,7 @@ get_header();
 			</div>
 			<div class="col-md-4">
 				<div class="information--right">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam obcaecati ipsum veniam eius eligendi, saepe, vitae magnam doloribus qui sequi dicta labore cum! Enim placeat eos mollitia facilis, nam quasi.
+					<?php get_template_part( 'template-parts/category', 'list' ); ?>
 				</div>
 			</div>
 		</div>
@@ -77,7 +77,7 @@ get_header();
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<?php echo do_shortcode( '[featured_products limit="6" columns="3" ]' ); ?>
+				<?php echo do_shortcode( '[featured_products limit="6" columns="3" class="pro_home" ]' ); ?>
 			</div>
 		</div>
 	</div>
@@ -88,35 +88,9 @@ get_header();
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h3>Blog</h3>
+				<h3>BLOG</h3>
 			</div>
-			<?php 
-				$args = array( 'post_type' => 'post' ,'posts_per_page' => 2 );
-				$loop = new WP_Query( $args );
-
-				if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				<!-- post -->
-				<div class="col-md-6">
-					<div class="post-entry" style="background: url(<?php the_post_thumbnail_url(); ?>);">
-						<div class="post-scuare">
-							<p><?php the_date(); ?></p>
-							<h2><?php the_title(); ?></h2>
-							<p><b><?php
-								$category = get_the_category();
-								echo $category[0]->cat_name;
-								?>
-									
-							</b></p>
-
-						</div>
-					</div>
-				</div>
-				<?php endwhile; ?>
-				<!-- post navigation -->
-				<?php else: ?>
-				<!-- no posts found -->
-				<?php endif; ?>
-				<?php wp_reset_postdata();?>
+			<?php get_template_part( 'template-parts/content', 'blog' ); ?>
 		</div>
 	</div>
 </section>

@@ -863,13 +863,33 @@ object {
 /*******Botones******/
 .boton{
 	border-radius: 5px;
+	color:#fff;
 	font-size: 1.1em;
 	padding: 0.5em 1.5em;
 }
 
-.boton--verde{
+.boton--verde, .boton--verde:visited{
 	background-color: #9BA78A;
 	color:#fff;
+}
+
+.boton--verde:hover{
+	background-color: transparent;
+	border:2px solid #9BA78A;
+	color:#9BA78A;
+	text-decoration: none;
+}
+
+.boton--cafe, .boton--cafe:visited {
+	background-color: #CCA78E;
+	border:2px solid #CCA78E;
+	color:#fff;
+}
+
+.boton--cafe:hover{
+	background-color: transparent;
+	color:#CCA78E;
+	text-decoration: none;
 }
 
 .slide-principal{
@@ -912,7 +932,83 @@ object {
 
 .information--right{
 	background-color: #CCA78E;
-	
+	color:#f9f9f9;
+	padding: 2em;
+	text-align: center;
+	min-height: 435px;
+	max-height: 435px;
+	overflow: hidden;
+}
+
+.information--right h4{
+	font-family: 'Lora', serif;
+}
+
+.information--right h3{
+	font-size: 2.5em;
+	font-weight: 700;
+	margin-top: -10px;
+}
+
+.information--right ul {
+	margin-left: 2em;
+	margin-top: 2em;
+	text-align: left;
+}
+
+.information--right ul li{
+	font-size: 1.6em;
+	font-weight: 200;
+	letter-spacing: 1px;
+	list-style: none;
+	margin-top: 8px;
+}
+
+.information--right ul li a, .information--right ul li a:visited{
+	color:#fff;
+}
+
+.information--right ul li a:hover{
+	color:#fff;
+	text-decoration: none;
+}
+
+/* Productos destacados */
+.pro_home ul li{
+	text-align: center;
+}
+
+.pro_home ul li h4{
+	color:#DAC1AA;
+	font-weight: 700;
+}
+
+.pro_home ul li a h2.woocommerce-loop-product__title{
+	color:#4f4f4f;
+	font-size: 2.3em!important;
+	font-weight: 700;
+	letter-spacing: 1px;
+	margin-top: -0.8em!important;
+}
+
+.woocommerce ul.products li.product .price {
+	margin-top: -10px;
+	margin-bottom: 2em;
+}
+
+.pro_home .woocommerce-LoopProduct-link.woocommerce-loop-product__link > span > span{
+	color:#9BA78A;
+	font-size: 2em;
+	font-weight: 800;
+	letter-spacing: 2px;
+}
+
+.pro_home .button.product_type_simple.add_to_cart_button.ajax_add_to_cart{
+	background-color: #CCA78E;
+	border-radius: 5px;
+	color:#fff;
+	font-size: 1.1em;
+	padding: 1em 1.5em;
 }
 
 .blog{
@@ -923,6 +1019,14 @@ footer{
 	background-color: #fff;
 }
 
+.blog h3{
+	color:#fff;
+	font-size: 2.5em;
+	font-weight: 700;
+	margin-top: -5px;
+	margin-bottom: 1em;
+	text-align: center;
+}
 
 .post-entry {
     padding: 20px;
@@ -937,8 +1041,13 @@ footer{
 }
 .post-scuare h2 {
     color: #eaeaea;
-        margin: 6px;
+    margin: 6px;
 }
+
+.post-scuare h2 a{
+    color: #eaeaea;
+}
+
 .post-scuare p{
 	color:#CAA88C;
 	margin-bottom: 0px;
