@@ -565,7 +565,7 @@ a:hover, a:active {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 62em) {
 	.menu-toggle {
 		display: none;
 	}
@@ -1174,3 +1174,15 @@ ul#footer-menu li {
     margin: auto 9px;
 }
 /************ fin footer ****************/
+
+button.menu-toggle {
+    float: right;
+}
+
+@media screen and (max-width: 62em){
+ul.nav-menu li {
+    display: inline-table;
+    float: none;
+    width: 80%;
+}
+}

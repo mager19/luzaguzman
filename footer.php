@@ -43,7 +43,17 @@
 			</div>
 		</div>
 	</footer><!-- #colophon -->
-
+<script type="text/javascript">
+	
+jQuery("button.menu-toggle").click(function(){
+    if(jQuery("button.menu-toggle span.glyphicon").hasClass("glyphicon-option-vertical")){
+    
+    jQuery( "button.menu-toggle span.glyphicon" ).removeClass( "glyphicon-option-vertical" ).addClass( "glyphicon-remove" );
+}else{
+jQuery( "button.menu-toggle span.glyphicon" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-option-vertical" );
+}
+});
+</script>
 <?php wp_footer(); ?>
 
 </body>
