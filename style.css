@@ -895,6 +895,7 @@ object {
 .slide-principal{
 	background-color: blue;
 	height: 60vh;
+	color: #fff;
 }
 
 .information--left{
@@ -1015,7 +1016,7 @@ object {
 }
 
 footer{
-	background-color: #000;
+	background-color: #fff;
 }
 
 
@@ -1042,3 +1043,100 @@ footer{
 .post-scuare .post-categories a {
     color: #CAA88C;
 }
+
+
+/************* header *******************/
+header.header {
+    padding: 10px 0px;
+}
+div#primary-menu a {
+    font-size: 1.7em;
+    color: #000;
+}
+
+nav#site-navigation {
+    width: auto;
+    padding-top: 3%;
+}
+div#primary-menu li {
+    padding-left: 17px;
+    padding-right: 17px;
+}
+.slider-arrows{
+	font-size: 3em;
+    font-weight: bold;
+}
+.slide {
+    display: flex;
+    align-items: center;
+    height: 59vh;
+}
+.col-sm-10.slide-content {
+    align-self: flex-end;
+        padding: 0px 25px 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    margin: 0px 20px;
+    border: 2px solid;
+    border-radius: 3px;
+    box-shadow: 0px 0px 21px -2px #000;
+}
+/************* fin header **************/
+/************* footer *******************/
+footer#colophon {
+    text-align: center;
+    padding: 2em;
+        font-size: 1.5em;
+    font-weight: 600;
+}
+i.facebook{
+	background: url(img/facebook-logo.svg) no-repeat top left;
+  background-size: contain;
+}
+i.twitter{
+	background: url(img/twitter-logo.svg) no-repeat top left;
+  background-size: contain;
+}
+i.dribble{
+	background: url(img/dribble-logo.svg) no-repeat top left;
+  background-size: contain;
+}
+i.instagram{
+	background: url(img/instagram-logo.svg) no-repeat top left;
+  background-size: contain;
+}
+footer i {
+
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+#social-networks {
+    margin-bottom: 0.7em;
+}
+ul#social-networks {
+    margin-left: 0px;
+    padding-left: 0px;
+    list-style: none;
+}
+ul#social-networks li {
+    display: inline-block;
+    padding: 5px 13px;
+    border: 2px solid #E2E2E2;
+    border-radius: 30px;
+    margin: auto 5px;
+}
+ul#footer-menu {
+    margin-left: 0px;
+    list-style: none;
+    padding-left: 0px;
+    display: inline-flex;
+}
+ul#footer-menu a {
+    color: #CCA78E;
+    /*font-size: 1.3em;*/
+}
+ul#footer-menu li {
+    margin: auto 9px;
+}
+/************ fin footer ****************/
