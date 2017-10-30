@@ -1019,6 +1019,14 @@ footer{
 	background-color: #fff;
 }
 
+.blog h3{
+	color:#fff;
+	font-size: 2.5em;
+	font-weight: 700;
+	margin-top: -5px;
+	margin-bottom: 1em;
+	text-align: center;
+}
 
 .post-entry {
     padding: 20px;
@@ -1033,8 +1041,13 @@ footer{
 }
 .post-scuare h2 {
     color: #eaeaea;
-        margin: 6px;
+    margin: 6px;
 }
+
+.post-scuare h2 a{
+    color: #eaeaea;
+}
+
 .post-scuare p{
 	color:#CAA88C;
 	margin-bottom: 0px;
