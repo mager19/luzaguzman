@@ -880,7 +880,7 @@ object {
 	text-decoration: none;
 }
 
-.boton--cafe, .boton--cafe:visited {
+.boton--cafe, .boton--cafe:visited{
 	background-color: #CCA78E;
 	border:2px solid #CCA78E;
 	color:#fff;
@@ -891,6 +891,19 @@ object {
 	color:#CCA78E;
 	text-decoration: none;
 }
+
+.single_add_to_cart_button {
+	background-color: #CCA78E!important;
+	border:2px solid #CCA78E!important;
+	color:#fff!important;
+}
+
+.single_add_to_cart_button:hover{
+	background-color: transparent!important;
+	color:#CCA78E!important;
+	text-decoration: none!important;
+}
+
 
 .slide__item{
 	background-size: cover;
@@ -1174,3 +1187,67 @@ ul#footer-menu li {
     margin: auto 9px;
 }
 /************ fin footer ****************/
+
+
+
+/*¨******Single product *************/
+.luza_product_header{
+	background-size: cover;
+    background-position: center;
+    height: 40vh;
+    margin-bottom: 10em;
+    text-align: center;
+
+}
+
+.luza_product_header h2{
+	background-color: #CCA78E;
+	color:#fff;
+	font-weight: 700;
+	letter-spacing: 2px;
+	margin-left: 25%;
+	position: relative;
+	text-transform: uppercase;
+	padding: 0.3em 0;
+	top: 93%;
+	width: 50%;
+}
+
+.woocommerce div.product .product_title {
+    font-size: 2.8em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    clear: none;
+    margin-top: 0;
+    padding: 0;
+}
+
+.woocommerce-product-details__short-description p{
+	letter-spacing: 1px;
+	line-height: 2em;
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.decoration_price{
+	border-top:2px solid #EEE8E2;
+	padding: 1em 0;
+	margin-top: 1em;
+}
+
+.woocommerce-Price-amount{
+	color:#9BA78A;
+	font-size: 1.5em;
+	font-weight: 800;
+	letter-spacing: 3px;
+}
+
+.product_meta{
+	font-weight: 800;
+}
+
+.posted_in a{
+	color:#CCA78E;!important;
+	font-weight: 700;
+	padding-left: 1em;
+}

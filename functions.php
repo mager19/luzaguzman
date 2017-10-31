@@ -208,3 +208,60 @@ add_action( 'woocommerce_after_shop_loop_item', 'luzaguzman_boton_readmore', 10)
 function luzaguzman_boton_readmore(){
 	echo('<a href="'. get_the_permalink() . '" class="boton boton--cafe">Read More</a>');
 }
+
+/*header para producto, trae el nombre e imagen de la categoria*/
+add_action( 'woocommerce_before_single_product', 'luzaguzman_product_header' );
+function luzaguzman_product_header(){
+	
+	$terms = get_the_terms( $post->ID, 'product_cat' );
+	$numero = 1;
+    foreach ( $terms as $term ){
+        $category_name = $term->name;
+        $category_thumbnail = get_woocommerce_term_meta($term->term_id, 'thumbnail_id', true);
+        $image = wp_get_attachment_url($category_thumbnail);
+        // echo '<img src="'.$image.'">';
+        if($numero<2){
+        	
+        	echo '<section class="luza_product_header" style="background-image: url(' .$image. ');">';
+        	echo '<h2>'.$category_name.'</h2>';
+        	echo('</section>');
+        }
+        $numero++;
+    }	
+}
+
+/*Remover el rating de los productos single*/
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating' , 10 );
+
+/*Remover el cuadro de cantidad en cada producto*/
+function default_no_quantities( $individually, $product ){
+	$individually = true;
+	return $individually;
+}
+add_filter( 'woocommerce_is_sold_individually', 'default_no_quantities', 10, 2 );
+
+/*Modificaciones a info  product en single product*/
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 6 );
+
+add_action( 'woocommerce_single_product_summary', 'luzguzman_price_decoration', 7 );
+function luzguzman_price_decoration(){
+	echo '<div class="decoration_price"></div>';
+}
+
+add_action( 'woocommerce_after_add_to_cart_form', 'luzguzman_price_decoration', 10 );
+
+/*Remover tabs de valoraciones*/
+add_filter( 'woocommerce_product_tabs', 'luzaguzman_remover_tabs' , 11);
+function luzaguzman_remover_tabs($tabs){
+	unset($tabs['reviews']);
+	return $tabs;
+}
+
+
+add_action( 'woocommerce_after_single_product_summary', 'luzaguzman_blog_product', 11 );
+function luzaguzman_blog_product(){
+	get_template_part('template-parts/content', 'blog');
+}
+
