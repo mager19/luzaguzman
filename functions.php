@@ -46,7 +46,12 @@ if ( ! function_exists( 'desarrollos_setup' ) ) :
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'desarrollos' ),
 		) );
-
+		register_nav_menus( array(
+			'social-networks' => esc_html__( 'Social Networks', 'desarrollos' ),
+		) );
+		register_nav_menus( array(
+			'menu-footer' => esc_html__( 'Footer', 'desarrollos' ),
+		) );
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -128,6 +133,10 @@ function desarrollos_scripts() {
 
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css' );
 
+	wp_enqueue_style( 'slickcss', get_template_directory_uri(). '/css/slick.css' );
+
+	wp_enqueue_style( 'slicktema', get_template_directory_uri(). '/css/slick-theme.css' );
+
 	wp_enqueue_style( 'googlefonts', 'https://fonts.googleapis.com/css?family=Lora:400i|Open+Sans:300,400,700,800');
 
 	wp_enqueue_script( 'jquery' );
@@ -135,6 +144,12 @@ function desarrollos_scripts() {
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array(), false, 'all' );
 
 	wp_enqueue_script( 'desarrollos-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'jqueryf', get_template_directory_uri() . '/js/jquery-3.2.1.min.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/js/slick.min.js', array(), false, 'all' );	
+
+	wp_enqueue_script( 'funciones', get_template_directory_uri() . '/js/funciones.js', array(), false, 'all' );	
 
 	wp_enqueue_script( 'desarrollos-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -171,3 +186,93 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );	
+
+/*Categoria de producto en el home*/
+add_action( 'woocommerce_before_shop_loop_item_title', 'luzaguzman_cat_pro_home', 10 ); 
+function luzaguzman_cat_pro_home(){
+	$product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
+	$single_cat = array_shift( $product_cats ); 
+	echo( '<h4>' . $single_cat->name . '</h4>' );	
+}
+
+/*Quito el precio sale y el sticker sale*/
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_product_get_sale_price', 10 );
+
+/*Quito el boton add to cart en el home*/
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+
+/*Se añade boton readmore*/
+add_action( 'woocommerce_after_shop_loop_item', 'luzaguzman_boton_readmore', 10);
+function luzaguzman_boton_readmore(){
+	echo('<a href="'. get_the_permalink() . '" class="boton boton--cafe">Read More</a>');
+}
+
+/*header para producto, trae el nombre e imagen de la categoria*/
+add_action( 'woocommerce_before_single_product', 'luzaguzman_product_header' );
+function luzaguzman_product_header(){
+	
+	$terms = get_the_terms( $post->ID, 'product_cat' );
+	$numero = 1;
+    foreach ( $terms as $term ){
+        $category_name = $term->name;
+        $category_thumbnail = get_woocommerce_term_meta($term->term_id, 'thumbnail_id', true);
+        $image = wp_get_attachment_url($category_thumbnail);
+        // echo '<img src="'.$image.'">';
+        if($numero<2){
+        	
+        	echo '<section class="luza_product_header" style="background-image: url(' .$image. ');">';
+        	echo '<h2>'.$category_name.'</h2>';
+        	echo('</section>');
+        }
+        $numero++;
+    }	
+}
+
+/*Remover el rating de los productos single*/
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating' , 10 );
+
+/*Remover el cuadro de cantidad en cada producto*/
+function default_no_quantities( $individually, $product ){
+	$individually = true;
+	return $individually;
+}
+add_filter( 'woocommerce_is_sold_individually', 'default_no_quantities', 10, 2 );
+
+/*Modificaciones a info  product en single product*/
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 6 );
+
+add_action( 'woocommerce_single_product_summary', 'luzguzman_price_decoration', 7 );
+function luzguzman_price_decoration(){
+	echo '<div class="decoration_price"></div>';
+}
+
+add_action( 'woocommerce_after_add_to_cart_form', 'luzguzman_price_decoration', 10 );
+
+/*Remover tabs de valoraciones*/
+add_filter( 'woocommerce_product_tabs', 'luzaguzman_remover_tabs' , 11);
+function luzaguzman_remover_tabs($tabs){
+	unset($tabs['reviews']);
+	return $tabs;
+}
+
+/*añadir Blog a product single*/
+add_action( 'woocommerce_after_single_product_summary', 'luzaguzman_blog_product', 21 );
+function luzaguzman_blog_product(){
+	echo '<div class="col-md-12">';
+	echo '<div class="bloga">';
+	get_template_part('template-parts/content', 'blog');
+	echo '</div>';
+	echo '</div>';
+}
+
+add_action( 'template_redirect', 'cl_remove_sidebar_product_pages' );
+
+function cl_remove_sidebar_product_pages() {
+    if ( is_product() ) {
+        remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+    }
+}

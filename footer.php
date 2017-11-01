@@ -17,23 +17,43 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis voluptate quisquam, blanditiis dolor facilis, saepe? Autem suscipit debitis, non id dignissimos nostrum ad labore, repudiandae, eveniet vel vero natus deleniti?
-					<div class="site-info">
-						<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'desarrollos' ) ); ?>"><?php
-							/* translators: %s: CMS name, i.e. WordPress. */
-							printf( esc_html__( 'Proudly powered by %s', 'desarrollos' ), 'WordPress' );
-						?></a>
-						<span class="sep"> | </span>
-						<?php
-							/* translators: 1: Theme name, 2: Theme author. */
-							printf( esc_html__( 'Theme: %1$s by %2$s.', 'desarrollos' ), 'desarrollos', '<a href="http://underscores.me/">Underscores.me</a>' );
+					
+					<?php
+							wp_nav_menu( array(
+								'theme_location' => 'social-networks',
+								'menu_id'        => 'social-networks',
+							) );
 						?>
+					<p>luzaguzman.com</p>
+					<?php
+							wp_nav_menu( array(
+								'theme_location' => 'menu-footer',
+								'menu_id'        => 'footer-menu',
+							) );
+						?>
+					<div class="site-info">
+						<h6>
+						<a href="<?php echo esc_url( __( 'https://nyxent.com/', 'desarrollos' ) ); ?>"><?php
+							/* translators: %s: CMS name, i.e. WordPress. */
+							printf( esc_html__( 'Proudly powered by %s', 'desarrollos' ), 'NYXENT' );
+						?></a>
+						</h6>
 					</div><!-- .site-info -->
 				</div>
 			</div>
 		</div>
 	</footer><!-- #colophon -->
-
+<script type="text/javascript">
+	
+jQuery("button.menu-toggle").click(function(){
+    if(jQuery("button.menu-toggle span.glyphicon").hasClass("glyphicon-option-vertical")){
+    
+    jQuery( "button.menu-toggle span.glyphicon" ).removeClass( "glyphicon-option-vertical" ).addClass( "glyphicon-remove" );
+}else{
+jQuery( "button.menu-toggle span.glyphicon" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-option-vertical" );
+}
+});
+</script>
 <?php wp_footer(); ?>
 
 </body>

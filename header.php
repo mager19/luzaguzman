@@ -16,6 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="icon" type="image/x-icon" href="<?php echo get_template_directory_uri() ?>/img/favicon.png" />
 
 	<?php wp_head(); ?>
 </head>
@@ -25,11 +26,11 @@
 	<header class="header">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-xs-7 col-sm-7 col-md-4">
 					<div class="site-branding">
 						<?php
 						the_custom_logo();
-						if ( is_front_page() && is_home() ) : ?>
+						/*if ( is_front_page() && is_home() ) : ?>
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php else : ?>
 							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
@@ -40,13 +41,13 @@
 						if ( $description || is_customize_preview() ) : ?>
 							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 						<?php
-						endif; ?>
+						//endif; ?>
 					</div><!-- .site-branding -->					
 				</div>
 				<!-- nav -->
-				<div class="col-md-8">
-					<nav id="site-navigation" class="main-navigation">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'desarrollos' ); ?></button>
+				<div class="col-xs-5 col-md-8">
+					<nav id="site-navigation" class="main-navigation pull-right">
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></button>
 						<?php
 							wp_nav_menu( array(
 								'theme_location' => 'menu-1',
