@@ -260,7 +260,7 @@ function luzaguzman_remover_tabs($tabs){
 }
 
 /*añadir Blog a product single*/
-add_action( 'woocommerce_after_single_product_summary', 'luzaguzman_blog_product', 11 );
+add_action( 'woocommerce_after_single_product_summary', 'luzaguzman_blog_product', 21 );
 function luzaguzman_blog_product(){
 	echo '<div class="col-md-12">';
 	echo '<div class="bloga">';
@@ -269,3 +269,10 @@ function luzaguzman_blog_product(){
 	echo '</div>';
 }
 
+add_action( 'template_redirect', 'cl_remove_sidebar_product_pages' );
+
+function cl_remove_sidebar_product_pages() {
+    if ( is_product() ) {
+        remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+    }
+}

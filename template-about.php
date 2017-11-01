@@ -23,10 +23,10 @@ get_header(); ?>
 						<div class="header-about-content">
 							<div class="col-md-5">
 								<?php the_post_thumbnail(); ?>
-								<span class="subtitle">subtitle: Lorem ipsum dolor sit amet, consectetur adipisicing elit. In quos vitae minima, neque voluptatibus magni. Quasi molestias quam, facere eligendi asperiores nulla reprehenderit, dicta sunt error deleniti neque dignissimos sequi?</span>
+								<div class="subtitle">subtitle: Lorem ipsum dolor sit amet, consectetur adipisicing elit. In quos vitae minima, neque voluptatibus magni. Quasi molestias quam, facere eligendi asperiores nulla.</div>
 							</div>
 							<div class="col-md-7">
-								<p><?php the_content(); ?></p>
+								<div class="about-description"><?php the_content(); ?></div>
 							</div>
 						</div>
 					<!-- post -->
@@ -37,7 +37,12 @@ get_header(); ?>
 			</div>	
 
 			<div class="col-md-12">
-				<?php echo do_shortcode( '[featured_products limit="3" columns="3" class="pro_home" ]' ); ?>
+				<div class="about-relacionados">
+					<h3>Algunos de mis trabajos</h3>
+					<?php echo do_shortcode( '[featured_products limit="3" columns="3" class="pro_home" ]' ); ?>
+				</div>
 			</div>					
 		</div>
 	</div>				
+
+<?php get_footer(); ?>
