@@ -13,8 +13,6 @@ get_header();
 
 ?>
 
-<p>Cambio en el home para probar master</p>
-
 <div class="slide-principal">
 <?php 
 	$args = array( 'post_type' => 'product', 'posts_per_page' => '3');
