@@ -259,9 +259,13 @@ function luzaguzman_remover_tabs($tabs){
 	return $tabs;
 }
 
-
+/*añadir Blog a product single*/
 add_action( 'woocommerce_after_single_product_summary', 'luzaguzman_blog_product', 11 );
 function luzaguzman_blog_product(){
+	echo '<div class="col-md-12">';
+	echo '<div class="bloga">';
 	get_template_part('template-parts/content', 'blog');
+	echo '</div>';
+	echo '</div>';
 }
 

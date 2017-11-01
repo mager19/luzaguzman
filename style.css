@@ -1251,3 +1251,39 @@ ul#footer-menu li {
 	font-weight: 700;
 	padding-left: 1em;
 }
+
+.tabs.wc-tabs p{
+	margin-bottom: 3em;
+}
+
+/*Header About*/
+.header-about{
+	border-top:2px solid #EEE8E2;
+	text-align: center;
+}
+
+.header-about h4{
+	color: #DAC1AA;
+	font-family: 'Lora', serif;	
+	font-weight: 700;
+	letter-spacing: 1px;
+	margin-top: 4em;
+}
+
+.header-about h2{
+	font-size: 6em;
+	letter-spacing: 2px;
+	margin-top: -10px;
+}
+
+.header-about .decora-about{
+	height: 100px;
+	border-left:2px solid #DAC1AA;
+	text-align: center;
+	margin-left: 49.9%;
+	margin-top: 3em;
+}
+
+.header-about-content{
+	margin-top: 5em;
+}
