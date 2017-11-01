@@ -22,8 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi numquam adipisci maiores. Iste excepturi sed quis non dolores veniam officiis recusandae beatae praesentium nihil facilis, nesciunt, accusantium quod laudantium ducimus.
-
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
