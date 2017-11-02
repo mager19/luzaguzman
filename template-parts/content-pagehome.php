@@ -88,7 +88,7 @@ get_header();
 </section>
 
 <!-- Blog -->
-<section class="blog contenedor">
+<section class="blog-home contenedor">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
