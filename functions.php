@@ -41,6 +41,8 @@ if ( ! function_exists( 'desarrollos_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'imagen-blog', 600, 500, true );
+		add_image_size( 'imagen-post-blog', 1280, 350, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(

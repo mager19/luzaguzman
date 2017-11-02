@@ -1012,7 +1012,7 @@ object {
 	text-align: center;
 }
 
-.pro_home ul li h4{
+.pro_home ul li h4, .entry-meta h4 a, .post_blog_luza h4 a{
 	color:#DAC1AA;
 	font-weight: 700;
 }
@@ -1197,7 +1197,6 @@ ul#footer-menu li {
     height: 40vh;
     margin-bottom: 10em;
     text-align: center;
-
 }
 
 .luza_product_header h2{
@@ -1353,3 +1352,36 @@ ul#footer-menu li {
 	text-decoration: none;
 }
 
+.post__item{
+	padding:3em;
+	margin-top: 1em;
+}
+
+.entry-title a{
+	color:#4f4f4f;
+	font-weight: 700;
+}
+
+.blog-excerp{
+	margin-bottom: 2em;
+}
+
+.luza_post_header{
+	background-size: cover;
+    background-position: center;
+    height: 30vh;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.post_blog_luza h3{
+	font-size: 3.2em;
+	letter-spacing: 2px;
+}
+
+.post_blog_luza p{
+	font-size: 1.2em;
+	line-height: 2em;
+	letter-spacing: 1px;
+	padding: 1em 0;
+}
