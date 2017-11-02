@@ -54,7 +54,9 @@
 								'menu_id'        => 'primary-menu',
 							) );
 						?>
+
 					</nav><!-- #site-navigation -->
+					
 				</div>
 			</div>
 		</div>
