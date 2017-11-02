@@ -288,3 +288,108 @@ add_action( 'init', 'jk_remove_wc_breadcrumbs' );
 function jk_remove_wc_breadcrumbs() {
     remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 }
+
+
+
+
+/**
+ * Add Cart icon and count to header if WC is active
+ */
+function my_wc_cart_count() {
+ 
+    if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+ 
+        $count = WC()->cart->cart_contents_count;
+        ?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php
+        if ( $count > 0 ) {
+            ?>
+            <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
+            <?php
+        }
+                ?></a><?php
+    }
+ 
+}
+add_action( 'your_theme_header_top', 'my_wc_cart_count' );
+/**
+ * Ensure cart contents update when products are added to the cart via AJAX
+ */
+function my_header_add_to_cart_fragment( $fragments ) {
+ 
+    ob_start();
+    $count = WC()->cart->cart_contents_count;
+    ?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php
+    if ( $count > 0 ) {
+        ?>
+        <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
+        <?php            
+    }
+        ?></a><?php
+ 
+    $fragments['a.cart-contents'] = ob_get_clean();
+     
+    return $fragments;
+}
+add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment' );
+
+
+// Add the cart link to menu
+function wpex_add_menu_cart_item_to_menus( $items, $args ) {
+
+// Make sure your change 'wpex_main' to your Menu location !!!!
+if ( $args->theme_location === 'menu-1' ) {
+
+$css_class = 'menu-item menu-item-type-cart menu-item-type-woocommerce-cart';
+
+if ( is_cart() ) {
+$css_class .= ' current-menu-item';
+}
+
+$items .= '<li class="' . esc_attr( $css_class ) . '">';
+
+$items .= wpex_menu_cart_item();
+
+$items .= '</li>';
+
+}
+
+return $items;
+
+}
+add_filter( 'wp_nav_menu_items', 'wpex_add_menu_cart_item_to_menus', 10, 2 );
+
+// Function returns the main menu cart link
+function wpex_menu_cart_item() {
+
+$output = '';
+
+$cart_count = WC()->cart->cart_contents_count;
+
+$css_class = 'wpex-menu-cart-total wpex-cart-total-'. intval( $cart_count );
+
+if ( $cart_count ) {
+$url  = WC()->cart->get_cart_url();
+} else {
+$url  = wc_get_page_permalink( 'shop' );
+}
+
+$html = $cart_extra = WC()->cart->get_cart_total();
+$html = str_replace( 'amount', '', $html );
+
+$output .= '<a href="'. esc_url( $url ) .'" class="' . esc_attr( $css_class ) . ' cart-contents">';
+
+//$output .= '<span class="fa fa-shopping-bag2"></span>';
+
+//$output .= wp_kses_post( $html );
+$output .= '</a>';
+
+return $output;
+}
+
+
+// Update cart link with AJAX
+function wpex_main_menu_cart_link_fragments( $fragments ) {
+$fragments['.wpex-menu-cart-total'] = wpex_menu_cart_item();
+return $fragments;
+}
+add_filter( 'add_to_cart_fragments', 'wpex_main_menu_cart_link_fragments' );

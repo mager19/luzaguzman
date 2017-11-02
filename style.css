@@ -1329,7 +1329,36 @@ ul.nav-menu li {
 	padding-top: 4em;
 }
 
+/******************* carrito ***********************************/
+.cart-contents:before {
+    font-family:WooCommerce;
+    content: "\e01d";
+    font-size:28px;
+    margin-top:10px;
+    font-style:normal;
+    font-weight:400;
+    padding-right:5px;
+    vertical-align: bottom;
+}
+.cart-contents:hover {
+    text-decoration: none;
+}
 
+a.cart-contents {
+    color: #CCA78E;
+}
+.cart-contents-count {
+    color: #fff;
+    background-color: #2ecc71;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 1px 6px;
+    line-height: 1;
+    margin-left: -5px;
+    position: relative;
+    bottom: 18px;
+    font-size: 0.5em;
+}
 
 /*********************** Media Querys *************************/
 @media screen and (max-width: 991px){
