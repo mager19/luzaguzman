@@ -16,10 +16,15 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
-			<?php
+			
+			<div class="container">
+				<div class="row">
+					<?php
 				woocommerce_content();
 			?>
+				</div>
+			</div>
+			
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
