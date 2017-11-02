@@ -1317,3 +1317,39 @@ ul#footer-menu li {
 .content-contact{
 	padding-top: 4em;
 }
+
+.content-contact form{
+	margin-left: 15%;
+	margin-bottom: 4em;
+	width: 90%;
+}
+
+.content-contact label{
+	padding-bottom: 1em;
+}
+
+.content-contact input, .content-contact textarea{
+	background-color: #DAC1AA;
+	border:none;
+	color:#fff;
+	font-size: 1.2em;
+	font-weight: 300;
+	padding: 0.5em 0;
+	margin-top: 0.5em;
+	text-align: center;
+}
+
+.wpcf7-submit, .wpcf7-submit:visited{
+	background-color: #CCA78E;
+	border:2px solid #fff!important;
+	color:#fff;
+	width: 20%;
+}
+
+.wpcf7-submit:hover{
+	background-color: transparent;
+	border:2px solid #CCA78E!important;
+	color:#CCA78E;
+	text-decoration: none;
+}
+
