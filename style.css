@@ -565,7 +565,7 @@ a:hover, a:active {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 62em) {
 	.menu-toggle {
 		display: none;
 	}
@@ -1188,6 +1188,18 @@ ul#footer-menu li {
 }
 /************ fin footer ****************/
 
+button.menu-toggle {
+    float: right;
+}
+
+@media screen and (max-width: 62em){
+ul.nav-menu li {
+    display: inline-table;
+    float: none;
+    width: 80%;
+}
+}
+
 
 
 /*¨******Single product *************/
@@ -1315,6 +1327,34 @@ ul#footer-menu li {
 
 .content-contact{
 	padding-top: 4em;
+}
+
+
+
+/*********************** Media Querys *************************/
+@media screen and (max-width: 991px){
+	div.post-entry:nth-child(1) {
+    margin-bottom: 25px;
+	}
+	.post-scuare {
+    padding: 17% 0;
+	}
+	.slick-next:before, .slick-prev:before {
+     font-size: 1.5em;
+	}
+	.slide-principal h1 {
+    font-size: 1.5em;
+ 	}
+
+	.slick-prev:before {
+	    margin-left: -18px;
+	}
+}
+
+@media screen and (max-width: 420px){
+	.woocommerce ul.products li.product{
+		width: 100% !important;
+	}
 }
 
 .content-contact form{

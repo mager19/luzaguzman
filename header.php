@@ -26,7 +26,7 @@
 	<header class="header">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-xs-7 col-sm-7 col-md-4">
 					<div class="site-branding">
 						<?php
 						the_custom_logo();
@@ -45,9 +45,9 @@
 					</div><!-- .site-branding -->					
 				</div>
 				<!-- nav -->
-				<div class="col-md-8">
+				<div class="col-xs-5 col-md-8">
 					<nav id="site-navigation" class="main-navigation pull-right">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'desarrollos' ); ?></button>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></button>
 						<?php
 							wp_nav_menu( array(
 								'theme_location' => 'menu-1',
