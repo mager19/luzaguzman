@@ -1012,7 +1012,7 @@ object {
 	text-align: center;
 }
 
-.pro_home ul li h4{
+.pro_home ul li h4, .entry-meta h4 a, .post_blog_luza h4 a{
 	color:#DAC1AA;
 	font-weight: 700;
 }
@@ -1045,7 +1045,7 @@ object {
 	padding: 1em 1.5em;
 }
 
-.blog{
+.blog-home{
 	background-color: #CCA78E;
 }
 
@@ -1053,7 +1053,7 @@ footer{
 	background-color: #fff;
 }
 
-.blog h3{
+.blog-home h3{
 	color:#fff;
 	font-size: 2.5em;
 	font-weight: 700;
@@ -1209,7 +1209,6 @@ ul.nav-menu li {
     height: 40vh;
     margin-bottom: 10em;
     text-align: center;
-
 }
 
 .luza_product_header h2{
@@ -1324,4 +1323,134 @@ ul.nav-menu li {
 
 .bloga{
 	padding: 3em 0;
+}
+
+.content-contact{
+	padding-top: 4em;
+}
+
+/******************* carrito ***********************************/
+.cart-contents:before {
+    font-family:WooCommerce;
+    content: "\e01d";
+    font-size:28px;
+    margin-top:10px;
+    font-style:normal;
+    font-weight:400;
+    padding-right:5px;
+    vertical-align: bottom;
+}
+.cart-contents:hover {
+    text-decoration: none;
+}
+
+a.cart-contents {
+    color: #CCA78E;
+}
+.cart-contents-count {
+    color: #fff;
+    background-color: #2ecc71;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 1px 6px;
+    line-height: 1;
+    margin-left: -5px;
+    position: relative;
+    bottom: 18px;
+    font-size: 0.5em;
+}
+
+/*********************** Media Querys *************************/
+@media screen and (max-width: 991px){
+	div.post-entry:nth-child(1) {
+    margin-bottom: 25px;
+	}
+	.post-scuare {
+    padding: 17% 0;
+	}
+	.slick-next:before, .slick-prev:before {
+     font-size: 1.5em;
+	}
+	.slide-principal h1 {
+    font-size: 1.5em;
+ 	}
+
+	.slick-prev:before {
+	    margin-left: -18px;
+	}
+}
+
+@media screen and (max-width: 420px){
+	.woocommerce ul.products li.product{
+		width: 100% !important;
+	}
+}
+
+.content-contact form{
+	margin-left: 15%;
+	margin-bottom: 4em;
+	width: 90%;
+}
+
+.content-contact label{
+	padding-bottom: 1em;
+}
+
+.content-contact input, .content-contact textarea{
+	background-color: #DAC1AA;
+	border:none;
+	color:#fff;
+	font-size: 1.2em;
+	font-weight: 300;
+	padding: 0.5em 0;
+	margin-top: 0.5em;
+	text-align: center;
+}
+
+.wpcf7-submit, .wpcf7-submit:visited{
+	background-color: #CCA78E;
+	border:2px solid #fff!important;
+	color:#fff;
+	width: 20%;
+}
+
+.wpcf7-submit:hover{
+	background-color: transparent;
+	border:2px solid #CCA78E!important;
+	color:#CCA78E;
+	text-decoration: none;
+}
+
+.post__item{
+	padding:3em;
+	margin-top: 1em;
+}
+
+.entry-title a{
+	color:#4f4f4f;
+	font-weight: 700;
+}
+
+.blog-excerp{
+	margin-bottom: 2em;
+}
+
+.luza_post_header{
+	background-size: cover;
+    background-position: center;
+    height: 30vh;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.post_blog_luza h3{
+	font-size: 3.2em;
+	letter-spacing: 2px;
+}
+
+.post_blog_luza p{
+	font-size: 1.2em;
+	line-height: 2em;
+	letter-spacing: 1px;
+	padding: 1em 0;
 }
