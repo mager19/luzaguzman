@@ -282,3 +282,7 @@ function iconic_remove_sidebar( $is_active_sidebar, $index ) {
 }
  
 add_filter( 'is_active_sidebar', 'iconic_remove_sidebar', 10, 2 );
+add_action( 'init', 'jk_remove_wc_breadcrumbs' );
+function jk_remove_wc_breadcrumbs() {
+    remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+}
