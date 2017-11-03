@@ -1459,3 +1459,30 @@ a.cart-contents {
 .error-404{
 	text-align: center;
 }
+
+.woocommerce a.button.alt, input#place_order{background-color:#CCA78E;}
+
+div#order_review {
+    width: 48%;
+    float: right;
+}
+div#customer_details {
+    width: 48%;
+    float: left;
+}
+div#customer_details .col-1, div#customer_details .col-2 {
+    width: 100%;
+}
+h3#order_review_heading {
+    width: 50%;
+    float: right;
+    clear: none;
+    padding: 0px 0px 36px 26px;
+}
+
+.woocommerce-billing-fields input, .woocommerce-billing-fields select {
+    padding: 0.5em 10px;
+}
+span.select2-selection.select2-selection--single {
+    height: 35px;
+}

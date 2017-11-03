@@ -20,7 +20,7 @@ get_header();
 
 	if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post(); ?>
 		
-		<div class="slide__item" style="background-image: url( <?php the_post_thumbnail_url(); ?>);">			 	
+		<div class="slide__item" style="background-image: url( <?php the_post_thumbnail_url('full'); ?>);">			 	
 		 	<h1><?php the_title(); ?></h1>			 	
 		</div>			
 	<!-- post -->
