@@ -11,48 +11,37 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+			<div class="container">
+				<div class="row">
+					<section class="error-404 not-found">
+						<?php 
+							$args = array( 'post_type' => 'product', 'posts_per_page' => '1' );
+							$loop = new WP_Query( $args ); ?>
+						<div class="header-about">
+							<?php if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post(); ?>
+								<?php the_post_thumbnail( $size = 'imagen-post-blog' ); ?>
+							<!-- post -->
+							<?php endwhile; ?>
+							<!-- post navigation -->
+							<?php else: ?>
+							<!-- no posts found -->
+							<?php endif; ?> 
+							<?php wp_reset_postdata(); ?>
+							<h4>Oops! That page can&rsquo;t be found</h4>
+							<h2>404</h2>
+							<div class="decora-about"></div>
+						</div>
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'desarrollos' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'desarrollos' ); ?></p>
-
-					<?php
-						get_search_form();
-
-						the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'desarrollos' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'desarrollos' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
+						<header class="page-header">
+							<h1 class="page-title"><?php esc_html_e( 'But here are some of my works.', 'desarrollos' ); ?></h1>
+						</header><!-- .page-header -->
+						
+						<?php echo do_shortcode( '[featured_products limit="3" columns="3" class="pro_home" ]' ); ?>
+						
+					</section><!-- .error-404 -->
+	
+				</div>
+			</div>		
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

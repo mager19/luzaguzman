@@ -18,6 +18,12 @@ get_header(); ?>
 		<main id="main" class="site-main">
 			<div class="container">
 				<div class="row">
+					
+					<div class="header-about">
+						<h4>I tell you some stories</h4>
+						<h2>Blog</h2>
+					</div>
+
 					<?php
 						if ( have_posts() ) :
 
@@ -31,6 +37,7 @@ get_header(); ?>
 
 							/* Start the Loop */
 							while ( have_posts() ) : the_post();
+
 
 								/*
 								 * Include the Post-Format-specific template for the content.
@@ -54,5 +61,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
