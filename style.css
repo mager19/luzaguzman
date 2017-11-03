@@ -1455,3 +1455,7 @@ a.cart-contents {
 	letter-spacing: 1px;
 	padding: 1em 0;
 }
+
+.error-404{
+	text-align: center;
+}
