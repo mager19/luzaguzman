@@ -38,7 +38,7 @@ get_header(); ?>
 
 			<div class="col-md-12">
 				<div class="about-relacionados">
-					<h3>Algunos de mis trabajos</h3>
+					<h3>My Work</h3>
 					<?php echo do_shortcode( '[featured_products limit="3" columns="3" class="pro_home" ]' ); ?>
 				</div>
 			</div>					
