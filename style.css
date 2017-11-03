@@ -1063,6 +1063,7 @@ footer{
 }
 
 .post-entry {
+	background-size: cover!important;
     padding: 20px;
     text-align: center;
     height: 350px;
@@ -1453,4 +1454,8 @@ a.cart-contents {
 	line-height: 2em;
 	letter-spacing: 1px;
 	padding: 1em 0;
+}
+
+.error-404{
+	text-align: center;
 }
