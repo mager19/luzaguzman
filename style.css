@@ -935,6 +935,7 @@ object {
 
 .information--left{
 	background-color: #EEE8E2;
+	max-height: 450px;
 }
 
 .information--left h4{
@@ -961,7 +962,7 @@ object {
 .information--left__imagen{
 	background-size: cover;
 	background-position: center center;
-	min-height: 435px;
+	min-height: 450px;
 }
 
 .information--right{
@@ -969,8 +970,8 @@ object {
 	color:#f9f9f9;
 	padding: 2em;
 	text-align: center;
-	min-height: 435px;
-	max-height: 435px;
+	min-height: 450px;
+	max-height: 450px;
 	overflow: hidden;
 }
 
@@ -985,7 +986,7 @@ object {
 }
 
 .information--right ul {
-	margin-left: 2em;
+	margin-left: 1em;
 	margin-top: 2em;
 	text-align: left;
 }
