@@ -16,7 +16,7 @@ get_header(); ?>
 			<div class="col-md-12">
 				<div class="header-about">
 					<h4>Artister Painter</h4>
-					<h2>Luz Guzman</h2>
+					<h2>Luza Guzman</h2>
 					<div class="decora-about"></div>
 					
 					<?php while ( have_posts() ) : the_post(); ?>
