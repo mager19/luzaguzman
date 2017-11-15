@@ -935,6 +935,7 @@ object {
 
 .information--left{
 	background-color: #EEE8E2;
+	max-height: 450px;
 }
 
 .information--left h4{
@@ -961,7 +962,7 @@ object {
 .information--left__imagen{
 	background-size: cover;
 	background-position: center center;
-	min-height: 435px;
+	min-height: 450px;
 }
 
 .information--right{
@@ -969,8 +970,8 @@ object {
 	color:#f9f9f9;
 	padding: 2em;
 	text-align: center;
-	min-height: 435px;
-	max-height: 435px;
+	min-height: 450px;
+	max-height: 450px;
 	overflow: hidden;
 }
 
@@ -985,7 +986,7 @@ object {
 }
 
 .information--right ul {
-	margin-left: 2em;
+	margin-left: 1em;
 	margin-top: 2em;
 	text-align: left;
 }
@@ -1142,7 +1143,7 @@ i.facebook{
   background-size: contain;
 }
 i.twitter{
-	background: url(img/twitter-logo.svg) no-repeat top left;
+	background: url(img/youtube-logo.svg) no-repeat top left;
   background-size: contain;
 }
 i.pinterest{
@@ -1458,4 +1459,48 @@ a.cart-contents {
 
 .error-404{
 	text-align: center;
+}
+
+.woocommerce a.button.alt, input#place_order{background-color:#CCA78E;}
+
+div#order_review {
+    width: 48%;
+    float: right;
+}
+div#customer_details {
+    width: 48%;
+    float: left;
+}
+div#customer_details .col-1, div#customer_details .col-2 {
+    width: 100%;
+}
+h3#order_review_heading {
+    width: 50%;
+    float: right;
+    clear: none;
+    padding: 0px 0px 36px 26px;
+}
+
+.woocommerce-billing-fields input, .woocommerce-billing-fields select {
+    padding: 0.5em 10px;
+}
+span.select2-selection.select2-selection--single {
+    height: 35px;
+}
+
+.suscripcion{
+	margin-bottom: 2em;
+	margin-top: 1em;
+}
+
+.suscribe, .suscribe:visited{
+	background-color: #9BA78A;
+	border:2px solid #9BA78A;
+	color:#fff;	
+}
+
+.suscribe:hover{
+	background-color: transparent;
+	color:#9BA78A;
+	text-decoration: none;
 }

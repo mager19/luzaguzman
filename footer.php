@@ -17,6 +17,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
+					<div class="suscripcion">
+						<a href="http://eepurl.com/c7vjjX" class="boton suscribe" target="_blank">Subscribe</a>
+					</div>
+				</div>
+				<div class="col-md-12">
 					
 					<?php
 							wp_nav_menu( array(
