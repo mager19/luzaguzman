@@ -1487,3 +1487,20 @@ h3#order_review_heading {
 span.select2-selection.select2-selection--single {
     height: 35px;
 }
+
+.suscripcion{
+	margin-bottom: 2em;
+	margin-top: 1em;
+}
+
+.suscribe, .suscribe:visited{
+	background-color: #9BA78A;
+	border:2px solid #9BA78A;
+	color:#fff;	
+}
+
+.suscribe:hover{
+	background-color: transparent;
+	color:#9BA78A;
+	text-decoration: none;
+}
