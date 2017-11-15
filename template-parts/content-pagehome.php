@@ -48,7 +48,7 @@ get_header();
 						<div class="col-md-7">
 							<div class="information--left__info">
 								<h4>About Me</h4>
-								<h3>Hi Everyone my name is Luz! </h3>
+								<h3>Hi Everyone my name is LuzA! </h3>
 								<p><?php the_excerpt(); ?></p>
 								<a href="<?php the_permalink(); ?>" class="boton boton--verde">Read More</a>
 								</div>
